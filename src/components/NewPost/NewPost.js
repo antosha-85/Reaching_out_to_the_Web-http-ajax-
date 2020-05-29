@@ -16,23 +16,12 @@ class NewPost extends Component {
       body: this.state.content,
       author: this.state.author
     };
-    axios.post('https://jsonplaceholder.typicode.com/posts', post).then(response => {
+    axios.post('https://reqres.in/api/users', post).then(response => {
         console.log('clicked again')
         console.log(response);
     })
   };
-  postDataHandler1=()=>{
-      console.log('clicked')
-      const post = {
-        title: this.state.title,
-        body: this.state.content,
-        author: this.state.author
-      };
-      axios.post('https://jsonplaceholder.typicode.com/posts', post).then(response => {
-          console.log('clicked again')
-          console.log(response);
-      })
-  }
+  
   render() {
     return (
       <div className="NewPost">
@@ -59,7 +48,6 @@ class NewPost extends Component {
           <option value="Anton">Anton</option>
         </select>
         <button onClick={this.postDataHandler}>Add Post</button>
-        <button onClick={this.postDataHandler1}>Add Post</button>
       </div>
     );
   }
